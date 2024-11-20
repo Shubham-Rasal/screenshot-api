@@ -13,6 +13,10 @@ app.use(express.json());
 app.use(express.static('public'));
 app.use(cors());
 
+app.get('/health', (req, res) => {
+  res.json({ status: 'ok' });
+});
+
 app.post('/api/screenshot', async (req, res) => {
   const { url } = req.body;
   
